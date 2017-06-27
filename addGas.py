@@ -10,8 +10,17 @@ worksheet1=workbook.active
 def getInput():
 
    continueInput="y"
+
+   
    
    while(continueInput!="n"):
+      #Going to print out the last line entered
+      lastLine=getLastLine()-1
+      print("The last line entered in the document is: ")
+      print("Date\t\t\t"+"Total\t"+"Gallons\t"+"Mileage")
+      print(str(worksheet1["A"+str(lastLine)].value)+"\t"+str(worksheet1["B"+str(lastLine)].value)+"\t"+str(worksheet1["C"+str(lastLine)].value)
+            +"\t"+str(worksheet1["D"+str(lastLine)].value))
+      
       global totalCost
       totalCost=input("Please enter the total filled: ")
       global gallons
